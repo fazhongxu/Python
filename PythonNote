@@ -22,3 +22,20 @@ result = requests.get(mzurl)
 print(reqult.text)//打印出网页下的内容
 
 
+//完整代码
+
+import requests
+from bs4 import BeautifulSoup
+mzurl = "http://www.mzitu.com/all/"
+result = requests.get(mzurl)
+soup = BeautifulSoup(result.text,'html.parser')
+# for mz in soup.select(".all"):
+#     print(mz.select('li'))
+all_mz = soup.find('div',class_='all').find_all('a')#获取class为all下面的div 下面的所有a连接 find_all 返回一个list集合
+for mz in all_mz :#遍历
+    text = mz.get_text()#获取a标记下的文本
+    href = mz['href']
+#     print(mz)#打印
+    print(href,text)#打印内容
+
+
