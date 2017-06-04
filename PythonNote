@@ -14,3 +14,5 @@ pip install Beautifulsounp4 //安装Beautifulsoup4
 
 pip install jupyter //安装jupyter
 
+jupyter notebook //使用jupyter notebook
+
