@@ -14,5 +14,11 @@ pip install Beautifulsounp4 //安装Beautifulsoup4
 
 pip install jupyter //安装jupyter
 
-jupyter notebook //使用jupyter notebook
+jupyter notebook //使用jupyter notebook打开chrome ,点击new->python3开始编写代码
+
+import requests
+mzurl = "http://www.mzitu.com/all/"
+result = requests.get(mzurl)
+print(reqult.text)//打印出网页下的内容
+
 
