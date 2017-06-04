@@ -1,0 +1,16 @@
+python 爬虫
+
+准备环境
+
+1.下载安装python
+
+2.配置环境变量 C:\Users\xxl\AppData\Local\Programs\Python\Python36\Scripts
+
+3.打开cmd（需要配置环境变量，即2过程之后才能操作如下）
+
+pip install requests //安装requests 注意是requests不是request
+
+pip install Beautifulsounp4 //安装Beautifulsoup4
+
+pip install jupyter //安装jupyter
+
