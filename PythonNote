@@ -31,7 +31,7 @@ result = requests.get(mzurl)
 soup = BeautifulSoup(result.text,'html.parser')
 # for mz in soup.select(".all"):
 #     print(mz.select('li'))
-all_mz = soup.find('div',class_='all').find_all('a')#获取class为all下面的div 下面的所有a连接 find_all 返回一个list集合
+all_mz = soup.find('div',class_='all').find_all('a')#获取div下面的class为all 下面的所有a连接 find_all 返回一个list集合
 for mz in all_mz :#遍历
     text = mz.get_text()#获取a标记下的文本
     href = mz['href']#获取超链接
