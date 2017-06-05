@@ -37,5 +37,28 @@ for mz in all_mz :#遍历
     href = mz['href']#获取超链接
 #     print(mz)#打印
     print(href,text)#打印内容
+    
+    
+    
+//打印出json格式
+import requests
+from bs4 import BeautifulSoup
+mzurl = "http://www.mzitu.com/all/"
+result = requests.get(mzurl)
+soup = BeautifulSoup(result.text,'html.parser')
+# for mz in soup.select(".all"):
+#     print(mz.select('li'))
+all_mz = soup.find('div',class_='all').find_all('a')#获取div下面的class为all 下面的所有a连接 find_all 返回一个list集合
+for mz in all_mz :#遍历
+    text = mz.get_text()#获取a标记下的文本
+    href = mz['href']#获取超链接
+#     print(href,text)#打印内容
+    d = {text:href}
+#     print(d)
+
+    tex = '"text"'+":"+'"'+text+'"'
+    url = '"url"'+":"+'"'+href+'"'
+    content = "{"+tex+","+url+"}," #字符串拼接，拼接成为{"text":"啊啊啊","url":"http://"},的形式，方便复制到json格式转换中，通过[contnet]转换为json数组，
+    print(content)
 
 
